@@ -1,0 +1,23 @@
+<div class="comics-search">
+  <%= image_tag "marvel_logo" %>
+  <div>
+    <%= form_with(url: root_path, method: "GET") do |f| %>
+     <%= f.text_field :query, placeholder: "Search...", class: "search-input" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="comics-results">
+  <% @comics.each do |comic| %>
+    <div class="comic-card" style=<%= "background-image:url(#{comic["images"][0]["path"]}/portrait_xlarge.#{comic["images"][0]["extension"]})" %> >
+      <div class="comic-like-btn">
+        <%= image_tag "heart_off", id: "heart-off" %>
+        <%= image_tag "heart_hover", id: "heart-hover" %>
+        <%= image_tag "heart_on", id: "heart-on" %>
+      </div>
+      <div class="comic-card-text-box">
+        <p><%= comic["title"] %></p>
+      </div>
+    </div>
+  <% end %>''
+</div>

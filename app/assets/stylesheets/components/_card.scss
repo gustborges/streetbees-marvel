@@ -1,0 +1,46 @@
+.comics-results {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-top: 25vh;
+  .comic-card {
+    width: 200px;
+    height: 350px;
+    margin: 0.8rem 1rem;
+    background-size: auto;
+    position: relative;
+    cursor: pointer;
+    .comic-like-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+    &:hover {
+      .comic-like-btn {
+        display: block;
+      }
+      .comic-card-text-box {
+        display: block;
+      }
+    }
+
+    .comic-card-text-box {
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 16%;
+      font-weight: 400;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      display: none;
+    }
+  }
+  #heart-on {
+    transform: translateY(6px);
+  }
+}
