@@ -13,6 +13,14 @@
   img {
     width: 100px;
   }
+  .sign-in-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    a {
+      color: white;
+    }
+  }
   .search-input {
     height: 3rem;
     width: 36vw;
