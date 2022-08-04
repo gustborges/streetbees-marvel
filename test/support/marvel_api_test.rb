@@ -8,11 +8,11 @@ class MarvelApiTest < ActionController::TestCase
     end
   end
 
-  test "it should return a list of 1 comic for Ultimate Spider-Man (2000) #69" do
+  test "returns a list of 1 comic when querying for Ultimate Spider-Man (2000) #69" do
     assert_equal(1, @specific_comics.length)
   end
 
-  test "it should return a list of 20 comics when there are no queries" do
+  test "returns a list of 20 comics when there are no queries" do
     assert_equal(20, @all_comics.length)
   end
 end

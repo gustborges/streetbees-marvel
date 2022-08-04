@@ -3,7 +3,7 @@ class MarvelApi
 
   def initialize(query)
     @query = query || nil
-    @data = JSON.parse(response.body)
+    @data = JSON.parse(response.body, object_class: OpenStruct)
   end
 
   def search_results

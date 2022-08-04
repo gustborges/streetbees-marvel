@@ -7,18 +7,27 @@
     background-size: auto;
     position: relative;
     cursor: pointer;
-    .comic-like-btn {
+    .comic-like-btn img {
       position: absolute;
       top: 0;
       right: 0;
-      display: none;
+    }
+    #heart-on {
+      visibility: hidden;
+    }
+    #heart-off {
+      visibility: hidden;
+      transform: translate(-5px, 10px);
     }
     &:hover {
-      .comic-like-btn {
-        display: block;
-      }
       .comic-card-text-box {
-        display: block;
+        visibility: visible;
+      }
+      #heart-on {
+        visibility: visible;
+      }
+      #heart-off {
+        visibility: visible;
       }
     }
 
@@ -33,7 +42,7 @@
       font-size: 0.9rem;
       padding: 0.5rem;
       text-transform: uppercase;
-      display: none;
+      visibility: hidden;
     }
   }
   #heart-on {

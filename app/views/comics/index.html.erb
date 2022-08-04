@@ -2,7 +2,9 @@
   <div class="sign-in-btn">
     <%= link_to "Sign in", new_user_session_path %>
   </div>
-  <%= image_tag "marvel_logo" %>
+  <%= link_to root_path do %>
+    <%= image_tag "marvel_logo" %>
+  <% end %>
   <div>
     <%= form_with(url: root_path, method: "GET", data: { turbo_frame: "turbo-search", turbo_action: "advance" }) do |f| %>
       <%= search_field_tag :query, params[:query], { oninput: "this.form.requestSubmit()", placeholder: "Search...", id: "search-input", class: "form-control" } %>

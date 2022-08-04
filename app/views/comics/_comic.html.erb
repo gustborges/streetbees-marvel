@@ -1,10 +1,11 @@
-<div class="comic-card" style=<%= "background-image:url(#{comic["images"][0]["path"]}/portrait_xlarge.#{comic["images"][0]["extension"]})" %> >
-  <div class="comic-like-btn">
-    <%= image_tag "heart_off", id: "heart-off" %>
-    <%= image_tag "heart_hover", id: "heart-hover" %>
-    <%= image_tag "heart_on", id: "heart-on" %>
+
+  <div class="comic-card" style=<%= "background-image:url(#{comic.images.first.path}/portrait_xlarge.#{comic.images.first.extension})" %> >
+    <div class="comic-like-btn">
+      <%= turbo_frame_tag "like-btn-#{comic.id}" do %>
+        <%= render partial: "like_button", locals: { comic_id: comic.id } %>
+      <% end %>
+    </div>
+    <div class="comic-card-text-box">
+      <p class="comic-card-title"><%= comic.title %></p>
+    </div>
   </div>
-  <div class="comic-card-text-box">
-    <p><%= comic["title"] %></p>
-  </div>
-</div>
