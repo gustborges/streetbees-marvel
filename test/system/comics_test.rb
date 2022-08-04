@@ -5,6 +5,19 @@ class ComicsTest < ApplicationSystemTestCase
     visit root_path
 
     assert_selector ".comic-card", minimum: 10
+    assert_css ".marvel_logo"
+    assert_css "#search-input"
+  end
+
+  test "should be most recently published first" do
+    search_results = MarvelApi.new("ultimate").search_results
+    Like.create(comic_id: search_results.last.id, user: users(:gustavo))
+    Like.create(comic_id: search_results.last.id, user: users(:max))
+
+    visit root_path
+
+    first_card = find ".comic-card", match: :first
+    assert first_card.find(id: "like-btn-#{search_results.last.id}")
   end
 
   test "displaying the right number of results on search" do

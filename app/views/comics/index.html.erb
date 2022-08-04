@@ -3,7 +3,7 @@
     <%= link_to "Sign in", new_user_session_path %>
   </div>
   <%= link_to root_path do %>
-    <%= image_tag "marvel_logo" %>
+    <%= image_tag "marvel_logo", class: "marvel_logo" %>
   <% end %>
   <div>
     <%= form_with(url: root_path, method: "GET", data: { turbo_frame: "turbo-search", turbo_action: "advance" }) do |f| %>
