@@ -1,24 +1,45 @@
-# README
+# Marvel Challenge - Streetbees 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## General instructions
+* Visit the index page (should be sorted by the most liked comics)
+* Search for a specific comic book
+* Like a comic book - it will redirect to sign page
+* Sign in/up
+* Back to the index page, you can like/dislike comic books
 
-Things you may want to cover:
+Important: devise pages are quite ugly - didn't have time to style them :(
 
-* Ruby version
+## Stack
+* Ruby 3.0.1
+* Ruby on Rails 7.0.3
+* Yarn 1.22.17
+* Main libraries: Hotwire (Turbo Frames/Streams), Devise, Faraday, Bootstrap, Capybara, VCR, JSBundling-Rails, CSSBundling-Rails.
 
-* System dependencies
+## Installation instructions
+```
+git clone https://github.com/mfts/streetbees-marvel.git
+cd streetbees-marvel
 
-* Configuration
+bundle install
+yarn install
+db:create
+db:migrate
 
-* Database creation
+bin/dev
+```
 
-* Database initialization
+## Testing
+* Minitest
+* Capybara
+* VCR (Marvel Api test)
 
-* How to run the test suite
+```
+# System test
+rails test:system
 
-* Services (job queues, cache servers, search engines, etc.)
+# Like model
+rails test like_test.rb
 
-* Deployment instructions
-
-* ...
+# Marvel API test (uses VCR)
+rails test test/support/marvel_api_test.rb
+```
