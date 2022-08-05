@@ -1,0 +1,11 @@
+<% if notice && request.path.split("/")[1] === "users" %>
+  <div class="alert alert-info alert-dismissable mb-0">
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert && request.path.split("/")[1] === "users" %>
+  <div class="alert alert-warning alert-dismissable mb-0">
+    <%= alert %>
+  </div>
+<% end %>

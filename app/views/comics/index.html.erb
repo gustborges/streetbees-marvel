@@ -1,6 +1,10 @@
 <div class="comics-search">
   <div class="sign-in-btn">
-    <%= link_to "Sign in", new_user_session_path %>
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
   </div>
   <%= link_to root_path do %>
     <%= image_tag "marvel_logo", class: "marvel_logo" %>

@@ -1,6 +1,4 @@
 class LikesController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def create
     @like = Like.find_by(like_params)
 
@@ -10,6 +8,7 @@ class LikesController < ApplicationController
       @like = Like.new(like_params)
       @like.save
     end
+
     respond_to do |format|
       format.html { redirect_to root_path }
       format.turbo_stream

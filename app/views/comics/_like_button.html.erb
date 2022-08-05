@@ -1,3 +1,9 @@
-<%= button_to likes_path, method: :post, params: { like: { comic_id: comic_id, user_id: current_user&.id } } do %>
-  <%= image_tag "heart_#{heart_icon(comic_id)}", id: "heart-#{heart_icon(comic_id)}" %>
+<% if current_user %>
+  <%= button_to likes_path, method: :post, params: { like: { comic_id: comic_id, user_id: current_user&.id } } do %>
+    <%= image_tag "heart_#{heart_icon(comic_id)}", id: "heart-#{heart_icon(comic_id)}" %>
+  <% end %>
+<% else %>
+  <%= button_to likes_path, method: :post, params: { like: { comic_id: comic_id, user_id: current_user&.id } }, data: { turbo: false } do %>
+    <%= image_tag "heart_#{heart_icon(comic_id)}", id: "heart-#{heart_icon(comic_id)}" %>
+  <% end %>
 <% end %>
