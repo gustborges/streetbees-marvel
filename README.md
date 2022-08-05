@@ -1,7 +1,7 @@
 # Marvel Challenge - Streetbees 
 
 ## General instructions
-* Visit the index page (should be sorted by the most liked comics)
+* Visit the index page (should be sorted by the most recent to the oldest)
 * Search for a specific comic book
 * Like a comic book - it will redirect to sign page
 * Sign in/up
