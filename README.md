@@ -20,11 +20,13 @@ Important: devise pages are quite ugly - didn't have time to style them :(
 git clone https://github.com/mfts/streetbees-marvel.git
 cd streetbees-marvel
 
+# use bin/setup or:
 bundle install
 yarn install
 db:create
 db:migrate
 
+# run the app
 bin/dev
 ```
 
